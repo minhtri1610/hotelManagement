@@ -104,11 +104,12 @@ CREATE TABLE IF NOT EXISTS SERVICE_ORDERS
 
 CREATE TABLE IF NOT EXISTS SERVICE_ORDER_ITEMS
 (
+  id INT generated always as identity,
   reservation_id INT NOT NULL,
   create_date DATE NOT NULL,
   service_id INT NOT NULL,
   price INT NOT NULL,
-  PRIMARY KEY (create_date, service_id, reservation_id),
+  PRIMARY KEY (id),
   FOREIGN KEY (service_id) REFERENCES SERVICES(service_id),
   FOREIGN KEY (reservation_id) REFERENCES RESERVATIONS(reservation_id)
 );
