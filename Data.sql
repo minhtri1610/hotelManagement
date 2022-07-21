@@ -18,9 +18,9 @@ INSERT INTO outdoor(view,bancony,room_id) values ('no','garden',201);
 INSERT INTO outdoor(view,bancony,room_id) values ('yes','sea',202);
 
 -- Insert values into Services table
-INSERT INTO services(service_id,service_name,price) values (1,'car rental',500000);
-INSERT INTO services(service_id,service_name,price) values (2,'oversea dial',100000);
-INSERT INTO services(service_id,service_name,price) values (3,'fried rice',80000);
+INSERT INTO services(service_id,service_name) values (1,'car rental');
+INSERT INTO services(service_id,service_name) values (2,'oversea dial');
+INSERT INTO services(service_id,service_name) values (3,'fried rice');
 
 -- Insert values in to Facility Types table
 INSERT INTO facilitytypes(facility_type_id,facility_name,quantity) values (1,'television',5);
@@ -97,20 +97,20 @@ INSERT INTO reservations(reservation_id,check_in_date,est_check_out_date,real_ch
 values (13,'2022-06-15','2022-06-19','2022-06-19',2,'2022-06-15',null,null,null,800000,10,101);
 
 -- Insert into Service Orders table
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-02',null,2,1,1);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-02',null,3,3,1);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-02',null,1,1,3);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-02',null,2,2,3);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-07',null,1,1,4);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-08',null,2,3,4);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-07',null,2,3,5);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-07',null,1,1,5);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-09',null,3,2,5);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-10',null,1,3,6);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-13',null,4,2,8);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-14',null,3,3,11);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-17',null,1,1,12);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-18',null,1,2,12);
-INSERT INTO serviceorders(create_date,delete_date,quantity,service_id,booking_id) values ('2022-06-17',null,1,2,13);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-02',200000,1,1);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-02',300000,3,1);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-02',100000,1,3);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-02',200000,2,3);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-07',100000,1,4);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-08',200000,3,4);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-07',200000,3,5);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-07',100000,1,5);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-09',300000,2,5);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-10',100000,3,6);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-13',400000,2,8);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-14',300000,3,11);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-17',100000,1,12);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-18',100000,2,12);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-17',100000,2,13);
 
 

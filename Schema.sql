@@ -87,17 +87,27 @@ CREATE TABLE IF NOT EXISTS SERVICES
 (
   service_id INT NOT NULL,
   service_name VARCHAR(50) NOT NULL,
-  price FLOAT NOT NULL,
   PRIMARY KEY (service_id)
 );
 
-CREATE TABLE IF NOT EXISTS SERVICEORDERS 
+CREATE TABLE IF NOT EXISTS SERVICE_ORDERS 
 (
-  create_date DATE NOT NULL,
-  delete_date DATE,
-  quantity INT NOT NULL,
-  service_id INT NOT NULL,
   reservation_id INT NOT NULL,
+  create_date DATE NOT NULL,
+  service_id INT NOT NULL,
+  quantity INT NOT NULL,
+  total_price FLOAT NOT NULL,
+  PRIMARY KEY (create_date, service_id, reservation_id),
+  FOREIGN KEY (service_id) REFERENCES SERVICES(service_id),
+  FOREIGN KEY (reservation_id) REFERENCES RESERVATIONS(reservation_id)
+);
+
+CREATE TABLE IF NOT EXISTS SERVICE_ORDER_ITEMS
+(
+  reservation_id INT NOT NULL,
+  create_date DATE NOT NULL,
+  service_id INT NOT NULL,
+  price INT NOT NULL,
   PRIMARY KEY (create_date, service_id, reservation_id),
   FOREIGN KEY (service_id) REFERENCES SERVICES(service_id),
   FOREIGN KEY (reservation_id) REFERENCES RESERVATIONS(reservation_id)
@@ -107,7 +117,7 @@ CREATE TABLE IF NOT EXISTS INVOICES
 (
   invoice_id INT NOT NULL,
   total_amount INT NOT NULL,
-  date_create DATE NOT NULL,
+  create_date DATE NOT NULL,
   customer_id INT NOT NULL,
   PRIMARY KEY (invoice_id),
   FOREIGN KEY (customer_id) REFERENCES MASTERCUSTOMERS(customer_id)
