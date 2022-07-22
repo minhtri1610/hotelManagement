@@ -99,10 +99,13 @@ values (13,'2022-06-15','2022-06-19','2022-06-19',2,'2022-06-15',null,null,null,
 -- Insert into Service Orders table
 INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-02',200000,1,1);
 INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-02',300000,3,1);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-02',100000,3,1);
 INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-02',100000,1,3);
 INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-02',200000,2,3);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-02',100000,2,3);
 INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-07',100000,1,4);
 INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-08',200000,3,4);
+INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-08',100000,3,4);
 INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-07',200000,3,5);
 INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-07',100000,1,5);
 INSERT INTO SERVICE_ORDER_ITEMS(create_date,price,service_id,reservation_id) values ('2022-06-09',300000,2,5);

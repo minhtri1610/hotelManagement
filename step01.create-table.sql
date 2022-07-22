@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS SERVICE_ORDER_ITEMS
   reservation_id INT NOT NULL,
   create_date DATE NOT NULL,
   service_id INT NOT NULL,
-  price INT NOT NULL,
+  price FLOAT NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (service_id) REFERENCES SERVICES(service_id),
   FOREIGN KEY (reservation_id) REFERENCES RESERVATIONS(reservation_id)
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS SERVICE_ORDER_ITEMS
 CREATE TABLE IF NOT EXISTS INVOICES 
 (
   invoice_id INT NOT NULL,
-  total_amount INT NOT NULL,
+  total_amount FLOAT NOT NULL,
   create_date DATE NOT NULL,
   customer_id INT NOT NULL,
   PRIMARY KEY (invoice_id),
