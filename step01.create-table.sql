@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS SERVICE_ORDER_ITEMS
 
 CREATE TABLE IF NOT EXISTS INVOICES 
 (
-  invoice_id INT NOT NULL,
+  invoice_id INT generated always as identity,
   total_amount FLOAT NOT NULL,
   create_date DATE NOT NULL,
   customer_id INT NOT NULL,
