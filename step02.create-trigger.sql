@@ -79,20 +79,29 @@ begin
             end loop;
 
             --update
-            UPDATE 
-                SERVICE_ORDERS 
-            SET 
-                total_price = v_price,
-                quantity = v_quantity
-            WHERE 
-                    SERVICE_ORDERS.create_date = OLD.create_date 
+            IF v_quantity > 0 and v_price > 0 THEN
+                UPDATE 
+                    SERVICE_ORDERS 
+                SET 
+                    total_price = v_price,
+                    quantity = v_quantity
+                WHERE 
+                        SERVICE_ORDERS.create_date = OLD.create_date 
                     AND SERVICE_ORDERS.service_id = OLD.service_id
                     AND SERVICE_ORDERS.reservation_id = OLD.reservation_id;
+            ELSE
+                DELETE FROM SERVICE_ORDERS
+                    WHERE SERVICE_ORDERS.create_date = OLD.create_date 
+                        AND SERVICE_ORDERS.service_id = OLD.service_id
+                        AND SERVICE_ORDERS.reservation_id = OLD.reservation_id;
+            END IF;
 
 
     ELSE
-        INSERT INTO SERVICE_ORDERS(reservation_id, create_date, service_id, quantity, total_price)
-            VALUES (OLD.reservation_id, OLD.create_date, OLD.service_id, 1, OLD.price);
+        DELETE FROM SERVICE_ORDERS
+            WHERE SERVICE_ORDERS.create_date = OLD.create_date 
+                    AND SERVICE_ORDERS.service_id = OLD.service_id
+                    AND SERVICE_ORDERS.reservation_id = OLD.reservation_id;
         --create
     END IF;
     return OLD;
